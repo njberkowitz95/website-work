@@ -1,0 +1,51 @@
+<!--
+  Career map section — noahberkowitzgeo.com/resume/
+
+  Lives inside a single core/html block on the Résumé page. The surrounding
+  page supplies .nb-section, .nb-kicker, .nb-lead and .nb-note; only the
+  map-specific rules are defined here.
+
+  Layout notes:
+    .nb-map-frame   fixed-ratio box with the iframe absolutely positioned
+                    inside it, so the embed never collapses before load
+    .nb-map-how     explicit column counts rather than auto-fit. With
+                    auto-fit/minmax the four cards broke as three-plus-an-orphan
+                    at common laptop widths; 1 / 2x2 / 4 is deterministic
+-->
+
+<style>
+.nb-map-figure{margin:28px 0 0}
+.nb-map-frame{position:relative;height:clamp(560px,74vh,780px);border:1px solid #dce3ed;border-radius:10px;overflow:hidden;background:#f5f7fa;box-shadow:0 3px 12px rgb(24 43 70 / 3%)}
+.nb-map-frame iframe{position:absolute;inset:0;display:block;width:100%;height:100%;border:0}
+.nb-map-figure figcaption{margin-top:14px}
+.nb-map-how{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+.nb-map-how li{margin:0;padding:14px 16px;border:1px solid #e4e9f0;border-radius:8px;background:#fbfcfe}
+.nb-map-how strong{display:block;margin-bottom:4px;font-size:.95em}
+.nb-map-how span{display:block;font-size:.9em;line-height:1.5;color:#4a5568}
+@media (min-width:1100px){.nb-map-how{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:540px){.nb-map-how{grid-template-columns:1fr}.nb-map-frame{height:clamp(520px,80vh,640px)}}
+</style>
+
+<section id="career-map" class="nb-section ">
+  <p class="nb-kicker">Experience &middot; mapped</p>
+  <h2>Where the work happened</h2>
+  <p class="nb-lead">Eight roles and two degrees across five states, from Freehold to Fremont. Each circle scales with the time spent in that post, and the connecting line traces the route in the order it happened. Posts that share a city &mdash; three in Lincoln, three in Worcester &mdash; sit on top of one another until you zoom in.</p>
+
+  <ul class="nb-map-how">
+    <li><strong>Filter by discipline</strong><span>Municipal GIS, utilities and infrastructure, research and remote sensing, public health, public safety, and education.</span></li>
+    <li><strong>Move through time</strong><span>The timeline along the bottom counts entries by year; brush a range to hold the map to that period.</span></li>
+    <li><strong>Read the full entry</strong><span>Select a point for the role, organisation, dates, duration, summary, toolkit and the exact address behind the dot.</span></li>
+    <li><strong>Or work from the list</strong><span>Every post, listed &mdash; sortable, searchable, and filtered in step with everything else on the map.</span></li>
+  </ul>
+
+  <figure class="nb-map-figure">
+    <div class="nb-map-frame">
+      <iframe
+        src="https://clausa.app.carto.com/map/313fb13e-77e2-4a8e-b5a1-f3b15609c83d"
+        title="Interactive career map: roles and degrees by location, filterable by discipline and date"
+        loading="lazy"
+        allowfullscreen></iframe>
+    </div>
+    <figcaption class="nb-note">Built in CARTO from the record below. <a class="nb-text-link" href="https://clausa.app.carto.com/map/313fb13e-77e2-4a8e-b5a1-f3b15609c83d" target="_blank" rel="noopener noreferrer">Open the full-screen map <span aria-hidden="true">&#8599;</span></a></figcaption>
+  </figure>
+</section>
